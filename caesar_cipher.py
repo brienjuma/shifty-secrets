@@ -4,7 +4,7 @@ class CaesarCipher:
     def __init__(self, shift_key) -> None:
         """Initializes a CaesarCipher object with a shift value
 
-        Argments:
+        Arguments:
         shift_key (int): shift value (positive for encryption, negative for decryption)
         """
         self.shift_key = shift_key % 26  # Normalize shift value (0-25)
