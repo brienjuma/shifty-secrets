@@ -10,6 +10,12 @@ class CaesarCipher:
         self.shift_key = shift_key % 26  # Normalize shift value (0-25)
         self.alphabet = list(__import__("string").ascii_lowercase)
 
+    def _shift_char(self, char: str, shift: int, alphabet: list) -> str:
+        """Performs actual shifts at character level"""
+        index = alphabet.index(char.lower())
+        shifted_index = (index + shift) % len(alphabet)
+        return alphabet[shifted_index]
+
     def encrypt(self, message) -> str:
         """Encrypts a message using Caesar Cipher"""
         uppercase = self.uppercase
