@@ -16,46 +16,41 @@ class CaesarCipher:
         shifted_index = (index + shift) % len(alphabet)
         return alphabet[shifted_index]
 
-    def encrypt(self, message) -> str:
+    def encrypt(self, message: str) -> str:
         """Encrypts a message using Caesar Cipher"""
-        uppercase = self.uppercase
-        lowercase = self.lowercase
-        key = self.shift_key
         encrypted_message = ""
 
         for char in message:
-            if char in uppercase:
-                index = uppercase.index(char)
-                shift = (index + key) % 26
-                char = uppercase[shift]
-
-            if char in lowercase:
-                index = lowercase.index(char)
-                shift = (index + key) % 26
-                char = lowercase[shift]
-
-            encrypted_message += char
+            if char.isalpha():
+                alphabet = (
+                    self.alphabet
+                    if char.islower()
+                    else list("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
+                )
+                encrypted_message += self._shift_char(char, self.shift_key, alphabet)
+            else:
+                encrypted_message += char
 
         return encrypted_message
 
-    def decrypt(self, message) -> str:
-        """Decrypts a message using Caesar Cipher"""
-        uppercase = self.uppercase
-        lowercase = self.lowercase
-        key = self.shift_key
-        decrypted_message = ""
+    # def decrypt(self, message) -> str:
+    #     """Decrypts a message using Caesar Cipher"""
+    #     uppercase = self.uppercase
+    #     lowercase = self.lowercase
+    #     key = self.shift_key
+    #     decrypted_message = ""
 
-        for char in message:
-            if char in uppercase:
-                index = uppercase.index(char)
-                shift = (index - key) % 26
-                char = uppercase[shift]
+    #     for char in message:
+    #         if char in uppercase:
+    #             index = uppercase.index(char)
+    #             shift = (index - key) % 26
+    #             char = uppercase[shift]
 
-            if char in lowercase:
-                index = lowercase.index(char)
-                shift = (index - key) % 26
-                char = lowercase[shift]
+    #         if char in lowercase:
+    #             index = lowercase.index(char)
+    #             shift = (index - key) % 26
+    #             char = lowercase[shift]
 
-            decrypted_message += char
+    #         decrypted_message += char
 
-        return decrypted_message
+    #     return decrypted_message
