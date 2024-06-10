@@ -70,7 +70,7 @@ class CaesarCipher:
         """Encrypts a message using Caesar Cipher"""
         uppercase = self.uppercase
         lowercase = self.lowercase
-        key = self.shift_key]
+        key = self.shift_key
         encrypted_message = ""
 
         for char in message.lower():
