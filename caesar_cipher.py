@@ -73,14 +73,14 @@ class CaesarCipher:
         key = self.shift_key
         encrypted_message = ""
 
-        for char in message.lower():
+        for char in message:
             if char in uppercase:
                 index = uppercase.index(char)
                 shift = (index + key) % 26
                 char = uppercase[shift]
 
             if char in lowercase:
-                index = uppercase.index(char)
+                index = lowercase.index(char)
                 shift = (index + key) % 26
                 char = lowercase[shift]
 
