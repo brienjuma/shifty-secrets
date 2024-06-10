@@ -33,24 +33,18 @@ class CaesarCipher:
 
         return encrypted_message
 
-    # def decrypt(self, message) -> str:
-    #     """Decrypts a message using Caesar Cipher"""
-    #     uppercase = self.uppercase
-    #     lowercase = self.lowercase
-    #     key = self.shift_key
-    #     decrypted_message = ""
+    def decrypt(self, message) -> str:
+        """Decrypts a message using Caesar Cipher"""
+        decrypted_message = ""
+        for char in message:
+            if char.isalpha():
+                alphabet = (
+                    self.alphabet
+                    if char.islower()
+                    else list("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
+                )
+                decrypted_message += self._shift_char(char, -self.shift_key, alphabet)
+            else:
+                decrypted_message += char
 
-    #     for char in message:
-    #         if char in uppercase:
-    #             index = uppercase.index(char)
-    #             shift = (index - key) % 26
-    #             char = uppercase[shift]
-
-    #         if char in lowercase:
-    #             index = lowercase.index(char)
-    #             shift = (index - key) % 26
-    #             char = lowercase[shift]
-
-    #         decrypted_message += char
-
-    #     return decrypted_message
+        return decrypted_message
