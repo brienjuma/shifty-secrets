@@ -19,6 +19,11 @@ class TestCaesarCipher(unittest.TestCase):
         encrypted_message = cipher.encrypt("")
         self.assertEqual(encrypted_message, "")
 
+    def test_decrypt_empty_message(self):
+        cipher = CaesarCipher(3)
+        decrypted_message = cipher.decrypt("")
+        self.assertEqual(decrypted_message, "")
+
 
 if __name__ == "__main__":
     unittest.main()
