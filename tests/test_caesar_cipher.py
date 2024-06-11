@@ -29,6 +29,11 @@ class TestCaesarCipher(unittest.TestCase):
         encrypted_message = cipher.encrypt("hello world!")
         self.assertEqual(encrypted_message, "khoor zruog!")
 
+    def test_digits(self):
+        cipher = CaesarCipher(3)
+        encrypted_message = cipher.encrypt("hello 2024!")
+        self.assertEqual(encrypted_message, "khoor 2024!")
+
 
 if __name__ == "__main__":
     unittest.main()
