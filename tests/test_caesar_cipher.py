@@ -24,6 +24,11 @@ class TestCaesarCipher(unittest.TestCase):
         decrypted_message = cipher.decrypt("")
         self.assertEqual(decrypted_message, "")
 
+    def test_punctuation(self):
+        cipher = CaesarCipher(3)
+        encrypted_message = cipher.encrypt("hello world!")
+        self.assertEqual(encrypted_message, "khoor zruog!")
+
 
 if __name__ == "__main__":
     unittest.main()
