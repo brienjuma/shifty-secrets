@@ -34,6 +34,12 @@ class TestCaesarCipher(unittest.TestCase):
         encrypted_message = cipher.encrypt("hello 2024!")
         self.assertEqual(encrypted_message, "khoor 2024!")
 
+    @unittest.skip("jj")
+    def test_encrypt_mixed_character_case(self):
+        cipher = CaesarCipher(3)
+        encrypted_message = cipher.encrypt("Hello world")
+        self.assertEqual(encrypted_message, "Khoor zruog")
+
 
 if __name__ == "__main__":
     unittest.main()
