@@ -41,8 +41,8 @@ class TestCaesarCipher(unittest.TestCase):
 
     def test_decrypt_mixed_character_case(self):
         cipher = CaesarCipher(3)
-        encrypted_message = cipher.encrypt("Khoor Zruog")
-        self.assertEqual(encrypted_message, "Hello World")
+        decrypted_message = cipher.decrypt("Khoor Zruog")
+        self.assertEqual(decrypted_message, "Hello World")
 
 
 if __name__ == "__main__":
