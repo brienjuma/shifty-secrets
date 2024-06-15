@@ -12,7 +12,7 @@ class CaesarCipher:
 
     def _shift_char(self, char: str, shift: int, alphabet: list) -> str:
         """Performs actual shifts at character level"""
-        index = alphabet.index(char.lower())
+        index = alphabet.index(char)
         shifted_index = (index + shift) % len(alphabet)
         return alphabet[shifted_index]
 
