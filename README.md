@@ -11,17 +11,19 @@ Here is a run through of how to set up the application localy.
 ### Requirements
 - Python
     - to check for python run on terminal/shell
-    > $python --version
+    >>>> $ python --version
     - or
-    > $python3 --version
+    >>>> $ python3 --version
 ### Steps
 1. Clone repository
     - example
-    > $git clone https://github.com/brienjuma/shifty-secrets.git
+    >>>> $ git clone https://github.com/brienjuma/shifty-secrets.git
 2. Change to directory
-    > $cd shifty-secrets 
+    >>>> $ cd shifty-secrets 
 3. Run 
-    > $python main.py 'hello world' 3 --mode encrypt
+    >>>> $ python main.py "This is the message to encrypt" 5 --mode encrypt
     -    or 
-    > $python main.py 'khoor zruog' 3 --mode decrypt
-    - where the string in quotes is the message, integer value is the shift key and well the mode is last.
+    >>>> $ python main.py "khoor zruog" 3 --mode decrypt
+    - where the string in quotes is the message, 
+    - integer value is the shift key. <b> !!!! shift value must be a positive integer i.e. greater than zero (x >= 1) </b>
+    - and last is the encrypt/decrypt switch.
